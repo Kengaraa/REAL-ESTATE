@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Our Office | Apex Realty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-layout-split { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 30px; }
+        .form-side { flex: 4; min-width: 300px; background: #ffffff; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .info-side { flex: 3; min-width: 280px; }
+        .form-control-block { margin-bottom: 20px; }
+        .form-control-block label { display: block; font-weight: 500; margin-bottom: 6px; color: #1a1a1a; }
+        .form-input-element { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 0.95rem; }
+        .form-input-element:focus { outline: none; border-color: #d4af37; }
+        .map-wrapper { width: 100%; height: 350px; margin-top: 40px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Apex<span>Realty</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="properties.html" class="nav-link">Properties</a></li>
+                <li><a href="agents.html" class="nav-link">Agents</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div class="text-center">
+            <h2 class="section-title">Get In Touch With Us</h2>
+            <p class="section-subtitle">Have questions or want to schedule a site tour? Leave a message below.</p>
+        </div>
+
+        <div class="contact-layout-split">
+            <div class="form-side">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message dispatched safely!');">
+                    <div class="form-control-block">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-input-element" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-control-block">
+                        <label for="emailAddr">Email Address</label>
+                        <input type="email" id="emailAddr" class="form-input-element" placeholder="johndoe@gmail.com" required>
+                    </div>
+                    <div class="form-control-block">
+                        <label for="phoneNo">Phone Number</label>
+                        <input type="tel" id="phoneNo" class="form-input-element" placeholder="+254 700 000000" required>
+                    </div>
+                    <div class="form-control-block">
+                        <label for="userMsg">Message Field</label>
+                        <textarea id="userMsg" class="form-input-element" rows="5" placeholder="Type your property inquiries here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer; width: 100%;">Submit Inquiry</button>
+                </form>
+            </div>
+
+            <div class="info-side">
+                <div class="testimonial-card" style="margin-bottom: 25px;">
+                    <h3 style="color: #d4af37; margin-bottom: 12px;">Headquarters Address</h3>
+                    <p>Apex Plaza, 4th Floor Avenue<br>Westlands, Nairobi, Kenya</p>
+                </div>
+                <div class="testimonial-card" style="margin-bottom: 25px;">
+                    <h3 style="color: #d4af37; margin-bottom: 12px;">Direct Contact channels</h3>
+                    <p><strong>Phone:</strong> +254 700 000 000</p>
+                    <p><strong>Email:</strong> contact@apexrealty.co.ke</p>
+                </div>
+                <div class="testimonial-card">
+                    <h3 style="color: #d4af37; margin-bottom: 12px;">Business Office Hours</h3>
+                    <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sundays: Closed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-wrapper">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819882012678!2d36.81223531534063!3d-1.2688849359779344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c3a11036f%3A0x633534b6b6ec42ab!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1655000000000!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center"><p>&copy; 2026 Apex Realty. All rights reserved.</p></div>
+    </footer>
+
+</body>
+</html>

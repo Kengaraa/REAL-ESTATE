@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Professional Agents | Apex Realty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .agents-container-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .agent-profile-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .agent-profile-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+        }
+        .agent-display-img { width: 100%; height: 280px; object-fit: cover; }
+        .agent-meta-info { padding: 25px; }
+        .agent-meta-info h3 { color: #1a1a1a; font-size: 1.4rem; margin-bottom: 5px; }
+        .title-tag { font-weight: 600; color: #d4af37; font-size: 0.9rem; margin-bottom: 15px; }
+        .contact-detail-line { font-size: 0.9rem; color: #555; margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Apex<span>Realty</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="properties.html" class="nav-link">Properties</a></li>
+                <li><a href="agents.html" class="nav-link active">Agents</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div class="text-center">
+            <h2 class="section-title">Meet Our Certified Brokers</h2>
+            <p class="section-subtitle">Dedicated real estate experts committed to securing your dream investments.</p>
+        </div>
+
+        <div class="agents-container-grid">
+            <div class="agent-profile-card">
+                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="Douglas Ken Broker Portrait Headshot" class="agent-display-img">
+                <div class="agent-meta-info">
+                    <h3>Douglas Ken</h3>
+                    <p class="title-tag">Senior Luxury Property Consultant</p>
+                    <p class="contact-detail-line">💼 <strong>Experience:</strong> 8 Years Active Service</p>
+                    <p class="contact-detail-line">🎯 <strong>Specialization:</strong> Suburban Villas & Duplexes</p>
+                    <p class="contact-detail-line">📧 douglas@apexrealty.co.ke</p>
+                </div>
+            </div>
+
+            <div class="agent-profile-card">
+                <img src="https://images.unsplash.com/photo-15 heck?auto=format&fit=crop&w=400&q=80" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Clara Beatrice Broker Portrait Headshot" class="agent-display-img">
+                <div class="agent-meta-info">
+                    <h3>Clara Beatrice</h3>
+                    <p class="title-tag">Commercial Space Acquisition Officer</p>
+                    <p class="contact-detail-line">💼 <strong>Experience:</strong> 5 Years Active Service</p>
+                    <p class="contact-detail-line">🎯 <strong>Specialization:</strong> Corporate Offices & Penthouses</p>
+                    <p class="contact-detail-line">📧 clara@apexrealty.co.ke</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center"><p>&copy; 2026 Apex Realty. All rights reserved.</p></div>
+    </footer>
+
+</body>
+</html>
