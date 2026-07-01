@@ -1,86 +1,303 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Professional Agents | Apex Realty</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .agents-container-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .agent-profile-card {
-            background: #ffffff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .agent-profile-card:hover {
-            border-color: #d4af37;
-            transform: translateY(-5px);
-        }
-        .agent-display-img { width: 100%; height: 280px; object-fit: cover; }
-        .agent-meta-info { padding: 25px; }
-        .agent-meta-info h3 { color: #1a1a1a; font-size: 1.4rem; margin-bottom: 5px; }
-        .title-tag { font-weight: 600; color: #d4af37; font-size: 0.9rem; margin-bottom: 15px; }
-        .contact-detail-line { font-size: 0.9rem; color: #555; margin-bottom: 6px; }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Agents | Apex Realty</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
 
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: #f8f9fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .textcenter {
+        text-align: center;
+      }
+
+      .sectionpadding {
+        padding: 80px 0;
+      }
+
+      .navbar {
+        background-color: #1a1a1a;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 3px solid #d4af37;
+      }
+
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: #d4af37;
+      }
+      .navmenu {
+        display: flex;
+        list-style: none;
+      }
+
+      .navlink {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .navitem {
+        margin-left: 25px;
+      }
+
+      .navlink:hover,
+      .navlink.active {
+        color: #d4af37;
+      }
+
+      /* Section Title */
+      .sectiontitle {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+      }
+
+      .sectionsubtitle {
+        color: #666;
+        margin-bottom: 50px;
+      }
+
+      /* Agent Grid */
+      .agentscontainergrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .agentprofilecard {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border-bottom: 4px solid transparent;
+      }
+
+      .agentprofilecard:hover {
+        transform: translateY(-8px);
+        border-bottom-color: #d4af37;
+      }
+
+      .agentdisplayimg {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+      }
+
+      .agentmetainfo {
+        padding: 25px;
+      }
+
+      .agentmetainfo h3 {
+        color: #1a1a1a;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+      }
+
+      .titletag {
+        color: #d4af37;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      .contactdetailline {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        color: #555;
+      }
+
+      .contactdetailline i {
+        color: #d4af37;
+        width: 18px;
+        font-size: 1rem;
+      }
+
+      /* Footer */
+      .mainfooter {
+        background: #1a1a1a;
+        color: #fff;
+        padding: 25px 0;
+        margin-top: 50px;
+      }
+
+      @media (max-width: 768px) {
+        .navbar .container {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .sectiontitle {
+          font-size: 2rem;
+        }
+
+        .navmenu {
+          gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <header class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Apex<span>Realty</span></a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="properties.html" class="nav-link">Properties</a></li>
-                <li><a href="agents.html" class="nav-link active">Agents</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <a href="index.html" class="logo"> Apex<span>Realty</span> </a>
+
+        <ul class="navmenu">
+          <li class="navitem">
+            <a href="index.html" class="navlink">Home</a>
+          </li>
+
+          <li class="navitem">
+            <a href="about.html" class="navlink">About</a>
+          </li>
+
+          <li class="navitem">
+            <a href="properties.html" class="navlink">Properties</a>
+          </li>
+
+          <li class="navitem">
+            <a href="agents.html" class="navlink">Agents</a>
+          </li>
+
+          <li class="navitem">
+                <a href="contact.html" class="navlink">Contacts</a>
+          </li>
+
+        </ul>
+      </div>
     </header>
 
-    <main class="container section-padding">
-        <div class="text-center">
-            <h2 class="section-title">Meet Our Certified Brokers</h2>
-            <p class="section-subtitle">Dedicated real estate experts committed to securing your dream investments.</p>
+    <!-- Agents Section -->
+    <main class="container sectionpadding">
+      <div class="textcenter">
+        <h2 class="sectiontitle">Meet Our Certified Brokers</h2>
+        <p class="sectionsubtitle">
+          Dedicated real estate experts committed to securing your dream
+          investments.
+        </p>
+      </div>
+
+      <div class="agentscontainergrid">
+        <!-- Agent 1 -->
+        <div class="agentprofilecard">
+          <img src="./pics/person1.jpg" alt="" class="agentdisplayimg" />
+
+          <div class="agentmetainfo">
+            <h3>Douglas Ken</h3>
+            <p class="titletag">Senior Luxury Property Consultant</p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-briefcase"></i>
+              <span><strong>Experience:</strong> 8 Years Active Service</span>
+            </p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-bullseye"></i>
+              <span
+                ><strong>Specialization:</strong> Suburban Villas &
+                Duplexes</span
+              >
+            </p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-envelope"></i>
+              <span>douglas@apexrealty.co.ke</span>
+            </p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 700 123 456</span>
+            </p>
+          </div>
         </div>
 
-        <div class="agents-container-grid">
-            <div class="agent-profile-card">
-                <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="Douglas Ken Broker Portrait Headshot" class="agent-display-img">
-                <div class="agent-meta-info">
-                    <h3>Douglas Ken</h3>
-                    <p class="title-tag">Senior Luxury Property Consultant</p>
-                    <p class="contact-detail-line">💼 <strong>Experience:</strong> 8 Years Active Service</p>
-                    <p class="contact-detail-line">🎯 <strong>Specialization:</strong> Suburban Villas & Duplexes</p>
-                    <p class="contact-detail-line">📧 douglas@apexrealty.co.ke</p>
-                </div>
-            </div>
+        <!-- Agent 2 -->
+        <div class="agentprofilecard">
+          <img
+            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
+            alt=""
+            class="agentdisplayimg"
+          />
 
-            <div class="agent-profile-card">
-                <img src="https://images.unsplash.com/photo-15 heck?auto=format&fit=crop&w=400&q=80" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Clara Beatrice Broker Portrait Headshot" class="agent-display-img">
-                <div class="agent-meta-info">
-                    <h3>Clara Beatrice</h3>
-                    <p class="title-tag">Commercial Space Acquisition Officer</p>
-                    <p class="contact-detail-line">💼 <strong>Experience:</strong> 5 Years Active Service</p>
-                    <p class="contact-detail-line">🎯 <strong>Specialization:</strong> Corporate Offices & Penthouses</p>
-                    <p class="contact-detail-line">📧 clara@apexrealty.co.ke</p>
-                </div>
-            </div>
+          <div class="agentmetainfo">
+            <h3>Clara Beatrice</h3>
+            <p class="tag">Commercial Space Acquisition Officer</p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-briefcase"></i>
+              <span><strong>Experience:</strong> 5 Years Active Service</span>
+            </p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-bullseye"></i>
+              <span
+                ><strong>Specialization:</strong> Corporate Offices &
+                Penthouses</span
+              >
+            </p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-envelope"></i>
+              <span>clara@apexrealty.co.ke</span>
+            </p>
+
+            <p class="contactdetailline">
+              <i class="fa-solid fa-phone"></i>
+              <span>+254 711 987 654</span>
+            </p>
+          </div>
         </div>
+      </div>
     </main>
 
-    <footer class="main-footer">
-        <div class="container text-center"><p>&copy; 2026 Apex Realty. All rights reserved.</p></div>
+    <!-- Footer -->
+    <footer class="mainfooter">
+      <div class="container textcenter">
+        <p>&copy; 2026 Kengara Apartments. All rights reserved.</p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
